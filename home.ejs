@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://source.unsplash.com/random') no-repeat center center fixed;
+            background-size: cover;
+            background-color: #4a0072;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            animation: fadeIn 2s;
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        .link-box {
+            background: #6a1b9a;
+            padding: 20px 40px;
+            border-radius: 8px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .link-box:hover {
+            transform: translateY(-10px);
+            background-color: #4a0072;
+        }
+        .link-box a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .welcome {
+            font-size: 50px;
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            animation: fadeInRight 2s;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes fadeInRight {
+            0% { opacity: 0; transform: translateX(100px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            .link-box {
+                padding: 15px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome">WELCOME</div>
+    <div class="container">
+        <h1>Home Page</h1>
+        <div class="links">
+            <div class="link-box">
+                <a href="/check-result">Check Result</a>
+            </div>
+            <div class="link-box">
+                <a href="/admin">Admin Login</a>
+            </div>
+            <div class="link-box">
+                <a href="/admin">Upload Marks</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

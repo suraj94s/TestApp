@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Results</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+        .logout-button {
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            /* padding: 8px 16px; */
+            background-color: red;
+            color: pink;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 30px;
+            transition: background-color 0.3s, transform 0.3s;
+            border-radius: 10px;
+            width: 200px;
+            height: 70px;
+        }
+        .logout-button:hover {
+            background-color: #555;
+            transform: translateY(-3px);
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            max-width: 800px;
+            width: 90%;
+            transition: transform 0.3s;
+        }
+        .container:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .form-group input {
+            flex: 1;
+            padding: 12px;
+            margin: 5px 0;
+            border: 2px solid #ff758c;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus {
+            border-color: #ff7eb3;
+            outline: none;
+        }
+        button {
+            width: calc(50% - 20px);
+            padding: 12px;
+            background-color: #ff758c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 10px auto;
+            display: block;
+        }
+        button:hover {
+            background-color: #ff7eb3;
+            transform: translateY(-3px);
+        }
+        h3 {
+            margin-top: 20px;
+            color: #555;
+            font-size: 18px;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            h3 {
+                font-size: 16px;
+            }
+            .form-group {
+                flex-direction: column;
+            }
+            button {
+                width: 100%;
+            }
+            a{
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="logout-button" onclick="location.href='/logout'">Logout</button>
+     <!-- <a href="/logout">Logout</a> -->
+    <div class="container">
+        <h1>Upload Student Results</h1>
+        <form action="/upload" method="POST">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Student Name" required>
+                <input type="text" name="rollNumber" placeholder="Roll Number" required>
+            </div>
+            <h3>Subjects</h3>
+            <div class="form-group">
+                <input type="text" name="subject1" placeholder="Subject 1 Name" required>
+                <input type="number" name="marks1" placeholder="Subject 1 Marks" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="subject2" placeholder="Subject 2 Name" required>
+                <input type="number" name="marks2" placeholder="Subject 2 Marks" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="subject3" placeholder="Subject 3 Name" required>
+                <input type="number" name="marks3" placeholder="Subject 3 Marks" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="subject4" placeholder="Subject 4 Name" required>
+                <input type="number" name="marks4" placeholder="Subject 4 Marks" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="subject5" placeholder="Subject 5 Name" required>
+                <input type="number" name="marks5" placeholder="Subject 5 Marks" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
